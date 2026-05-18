@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering SYSTEM
+        "https://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd">
+
+<hibernate-reverse-engineering>
+
+    <type-mapping>
+
+        <!-- Map NUMERIC to BigDecimal -->
+        <sql-type jdbc-type="NUMERIC" hibernate-type="big_decimal"/>
+
+        <!-- Map UUID to java.util.UUID -->
+        <sql-type jdbc-type="OTHER" hibernate-type="pg-uuid"/>
+    </type-mapping>
+
+    <!-- Assign a package to tables matching a pattern -->
+    <table-filter match-name=".*" package="com.jetbrains.entities"/>
+
+    <!-- Exclude migration tables -->
+    <table-filter match-name="flyway.*" exclude="true"/>
+
+    <table name="products" class="Product">
+        <!-- Primary key configuration -->
+        <primary-key property="id">
+            <generator class="sequence">
+                <param name="sequence_name">product_id_seq</param>
+            </generator>
+        </primary-key>
+
+    </table>
+
+    <table name="orders" class="Order">
+        <!-- Primary key configuration -->
+        <primary-key property="id">
+            <generator class="sequence">
+                <param name="sequence_name">order_id_seq</param>
+            </generator>
+        </primary-key>
+    </table>
+
+    <table name="order_items" class="OrderItem">
+        <!-- Primary key configuration -->
+        <primary-key property="id">
+            <generator class="sequence">
+                <param name="sequence_name">order_item_id_seq</param>
+            </generator>
+        </primary-key>
+    </table>
+
+</hibernate-reverse-engineering>
