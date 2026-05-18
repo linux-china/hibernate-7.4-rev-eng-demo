@@ -13,6 +13,8 @@ public class HibernateUtils {
         );
          return new HibernatePersistenceConfiguration("Default")
                         .managedClasses(entityClasses)
+                        .jdbcDriver("org.testcontainers.jdbc.ContainerDatabaseDriver")
+                        .jdbcUrl("jdbc:tc:postgresql:18-alpine:///db?TC_INITSCRIPT=schema.sql")
                         .jdbcPoolSize(16)
                         .showSql(true, true, true)
                         .createEntityManagerFactory();

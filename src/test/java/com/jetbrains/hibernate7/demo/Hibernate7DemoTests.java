@@ -6,8 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static java.lang.System.out;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class Hibernate7DemoTests {
 
@@ -24,8 +23,7 @@ class Hibernate7DemoTests {
             List<Product> products =
                     session.createSelectionQuery("from Product", Product.class)
                             .getResultList();
-            assertFalse(products.isEmpty());
-            products.forEach(out::println);
+            assertEquals(15, products.size());
         });
     }
 }
