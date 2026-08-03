@@ -103,7 +103,7 @@
                         <id>generate-entities</id>
                         <phase>generate-sources</phase>
                         <goals>
-                            <goal>hbm2ddl</goal>
+                            <!-- <goal>hbm2ddl</goal>-->
                             <goal>hbm2java</goal>
                             <!-- <goal>hbm2dao</goal>-->
                         </goals>
