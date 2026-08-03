@@ -96,6 +96,7 @@
                 <version>${hibernate.version}</version>
                 <configuration>
                     <revengFile>hibernate-reverse-engineering.xml</revengFile>
+                    <outputDirectory>src/main/java</outputDirectory>
                 </configuration>
                 <executions>
                     <execution>
