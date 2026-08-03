@@ -14,7 +14,7 @@
     </type-mapping>
 
     <!-- Assign a package to tables matching a pattern -->
-    <table-filter match-name=".*" package="com.jetbrains.entities"/>
+    <table-filter match-name=".*" package="com.jetbrains.hibernate7.demo.entities"/>
 
     <!-- Exclude migration tables -->
     <table-filter match-name="flyway.*" exclude="true"/>
