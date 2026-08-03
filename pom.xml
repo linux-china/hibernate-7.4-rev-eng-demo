@@ -104,7 +104,7 @@
                         <goals>
                             <goal>hbm2ddl</goal>
                             <goal>hbm2java</goal>
-                            <goal>hbm2dao</goal>
+                            <!-- <goal>hbm2dao</goal>-->
                         </goals>
                     </execution>
                 </executions>
